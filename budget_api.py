@@ -33,9 +33,9 @@ class BudgetAPI:
         else:
             raise ValueError("Must provide either name or category_id")
     
-    def update_category(self, category_id: int, **kwargs) -> Category:
+    def update_category(self, **kwargs) -> Category:
         """Update a category"""
-        return self.category_manager.update_category(category_id, **kwargs)
+        return self.category_manager.update_category( **kwargs)
     
     def delete_category(self, category_id: int, force: bool = False) -> bool:
         """Delete a category"""

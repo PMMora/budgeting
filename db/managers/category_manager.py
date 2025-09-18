@@ -37,11 +37,12 @@ class CategoryManager:
             
             if category_id:
                 category = session.query(Category).filter_by(id=category_id).first()
-                
+                if not category:
+                    raise ValueError(f"Category with id: {category_id} not found")
             else:
                 category = session.query(Category).filter_by(name=category_name).first()
                 if not category:
-                    raise ValueError(f"Category with id: {category_id} not found")
+                    raise ValueError(f"Category with name: {category_name} not found")
             
             allowed_fields = ["name", "parent", "limit_amount"]
             updated_fields = []

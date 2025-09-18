@@ -1,8 +1,7 @@
-from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session as saSession
 from sqlalchemy import and_, extract
-from datetime import date, datetime
-from typing import List, Optional
+from datetime import date
+from typing import List
 from db.db import db_instance
 from db.models.transaction import Transaction
 from db.models.category import Category

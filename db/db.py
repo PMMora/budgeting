@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from models.base import Base
-from models.enums import DBFile
+from db.models.base import Base
+from db.models.enums import DBFile
 
 class DB:
     def __init__(self, db_file: DBFile = DBFile.MAIN):
